@@ -8,19 +8,23 @@
     <script type="module" defer src="app.js"></script>
 </head>
 <body>
-  <h1>Awesome books</h1>
+  <h1>All awesome books</h1>
 
-  <div id="bookList">
-      <!-- Here will be displayed books added-->
+  <div class="container">
+    <div id="bookList">
+        <!-- Here will be displayed books added-->
+    </div>
   </div>
   
   <!--my form-->
+  <hr class="separator">
+  <br>
   <form id="addBookForm">
-    <br> <br>
+    <h3>Add a new book</h3>
+    <br>
     <input type="text" id="titleInput" placeholder="Title" required>
-    <br> <br>
+    <br>
     <input type="text" id="authorInput" placeholder="Author" required>
-    <br> <br>
     <button type="submit">Add</button>
   </form>
 </body>

@@ -3,3 +3,53 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.book {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#addBookForm {
+  display: grid;
+  place-items: center;
+}
+
+button {
+  display: grid;
+  margin-left: auto9.5%;
+  margin-top: 1%;
+}
+
+.separator {
+  width: 20%;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.container {
+  border: 1px solid #1a1717;
+
+}
+
+.even-book {
+  background-color: silver;
+}
+
+.odd-book {
+  background-color: white;
+}
+
+#bookList {
+  display: flex;
+  flex-direction: column;
+}
+
