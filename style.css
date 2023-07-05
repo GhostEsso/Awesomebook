@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand:wght@300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Quicksand' sans-serif;
 }
 
 h1 {
@@ -35,11 +42,6 @@ button {
   margin-top: 5%;
 }
 
-.container {
-  border: 1px solid #1a1717;
-
-}
-
 .even-book {
   background-color: silver;
 }
@@ -53,3 +55,74 @@ button {
   flex-direction: column;
 }
 
+/* nav  */
+nav {
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 1px;
+  border: 3px solid #1a1717;
+}
+
+nav ul .logo {
+  margin-right: auto;
+  cursor: pointer;
+}
+
+nav ul li {
+  margin-right: 20px;
+  border-right: 1px solid rgb(128, 47, 0);
+  padding-right: 10px;
+}
+
+nav ul li:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav ul li a.active {
+  color: #ff0000;
+}
+
+.right-section {
+  float: right;
+}
+
+#contactSection {
+  display: grid;
+  place-items: center;
+}
+
+#bookList {
+
+
+}
+
+#bookList.border {
+  border: 3px solid black;
+}
+
+/* footer  */
+.copyright {
+  border: 2px solid black;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+#current_date {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+}

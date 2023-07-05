@@ -5,27 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Awesome Books App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <script type="module" defer src="app.js"></script>
 </head>
 <body>
-  <h1>All awesome books</h1>
+  <header>
+    <nav>
+      <ul>
+        <h1 class="logo" href="index.html">Awesome Books</h1>
+        <li><a id="booksLink" href="#" class="active">List</a></li>
+        <li><a id="addBookLink" href="#">Add New</a></li>
+        <li><a id="contactLink" href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <span id="current_date"></span>
+  </header>
 
-  <div class="container">
+  <main>
+
+<section id="bookListSection">
+  <h1>All awesome books</h1>
+   <div class="container">
     <div id="bookList">
         <!-- Here will be displayed books added-->
     </div>
   </div>
+</section>
   
   <!--my form-->
-  <hr class="separator">
-  <br>
-  <form id="addBookForm">
-    <h3>Add a new book</h3>
-    <br>
-    <input type="text" id="titleInput" placeholder="Title" required>
-    <br>
-    <input type="text" id="authorInput" placeholder="Author" required>
-    <button type="submit">Add</button>
-  </form>
+        <!-- <hr class="separator"> -->
+<section id="addBookSection">
+     
+        <br>
+    <form id="addBookForm">
+      <h3>Add a new book</h3>
+        <br>
+      <input type="text" id="titleInput" placeholder="Title" required>
+        <br>
+      <input type="text" id="authorInput" placeholder="Author" required>
+      <button type="submit">Add</button>
+    </form>
+</section>
+
+      <br><br><br><br>
+
+  <section id="contactSection" class="content-section">
+    <h2>Contact Information</h2>
+      <br>
+    <p>Do have any questions or you just want to say "Hello"?<br>
+    You can reach out to us</p>
+  
+      <br><br>
+
+    <ul>
+      <li>    Our email: lilipitaham@gmail.com</li>
+      <li>    Our phone number: 0022892289005</li>
+      <li>    Our address: Rue Minamadou, Agoè-Logopé, Lomé, Togo</li>
+    </ul>
+  </section>
+</main>
+
+<br><br>
+
+  <footer>
+    <div class="copyright">
+      <p>Copyright</p>
+    </div>
+  </footer>
 </body>
 </html>
