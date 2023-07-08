@@ -28,12 +28,23 @@ h1 {
 #addBookForm {
   display: grid;
   place-items: center;
+  border: 2px solid #e0dddd;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 63%);
+  margin-left: 40%;
+  margin-right: 40%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 button {
   display: grid;
   margin-left: auto9.5%;
   margin-top: 1%;
+}
+
+button:hover {
+  background-color: green;
+  color: white;
 }
 
 .separator {
@@ -44,6 +55,8 @@ button {
 
 .even-book {
   background-color: silver;
+  border: 2px solid #e0dddd;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 63%);
 }
 
 .odd-book {
@@ -67,7 +80,8 @@ nav ul {
   align-items: center;
   margin: 0;
   padding: 1px;
-  border: 3px solid #1a1717;
+  border: 2px solid #e0dddd;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 30%);
 }
 
 nav ul .logo {
@@ -103,6 +117,12 @@ nav ul li a.active {
 #contactSection {
   display: grid;
   place-items: center;
+  border: 2px solid #e0dddd;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 63%);
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 #bookList {
@@ -111,7 +131,9 @@ nav ul li a.active {
 }
 
 #bookList.border {
-  border: 3px solid black;
+  border: 1px solid rgba(97, 255, 6, 0.01);
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 /* footer  */
