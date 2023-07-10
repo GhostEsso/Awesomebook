@@ -13,11 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
   function updateDateTime() {
     const current_date = new Date();
-    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-    const timeOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
-    const date = current_date.toLocaleDateString(undefined, dateOptions);
-    const time = current_date.toLocaleTimeString(undefined, timeOptions);
-    const dateTimeString = `${date} ${time}`;
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+    const dateTimeString = current_date.toLocaleString(undefined, options);
     
     currentDateElement.textContent = dateTimeString;
   }
@@ -36,39 +33,38 @@ logoLink.addEventListener('click', () => {
   window.location.href = 'index.html';
 });
 
+// Fonction pour activer un lien et afficher une section
+function activateLink(link) {
+  booksLink.classList.remove('active');
+  addBookLink.classList.remove('active');
+  contactLink.classList.remove('active');
 
+  link.classList.add('active');
+}
 
+// Fonction pour afficher une section et masquer les autres
+function showSection(section) {
+  bookListSection.style.display = 'none';
+  addBookSection.style.display = 'none';
+  contactSection.style.display = 'none';
+
+  section.style.display = 'block';
+}
 
 // Écouteurs d'événements pour les liens de la barre de navigation
 booksLink.addEventListener('click', () => {
-  booksLink.classList.add('active');
-  addBookLink.classList.remove('active');
-  contactLink.classList.remove('active');
-
-  bookListSection.style.display = 'block';
-  addBookSection.style.display = 'none';
-  contactSection.style.display = 'none';
+  activateLink(booksLink);
+  showSection(bookListSection);
 });
 
 addBookLink.addEventListener('click', () => {
-  booksLink.classList.remove('active');
-  addBookLink.classList.add('active');
-  contactLink.classList.remove('active');
-
-  bookListSection.style.display = 'none';
-  addBookSection.style.display = 'block';
-  contactSection.style.display = 'none';
+  activateLink(addBookLink);
+  showSection(addBookSection);
 });
 
 contactLink.addEventListener('click', () => {
-  booksLink.classList.remove('active');
-  addBookLink.classList.remove('active');
-  contactLink.classList.add('active');
-
-  bookListSection.style.display = 'none';
-  addBookSection.style.display = 'none';
-  contactSection.style.display = 'grid';
-
+  activateLink(contactLink);
+  showSection(contactSection);
 });
 
 // Get reference to HTML elements
@@ -127,22 +123,14 @@ class BookCollection {
       bookElement.appendChild(removeButton);
       bookListElement.appendChild(bookElement);
 
-      if (index % 2 === 0) {
-        bookElement.classList.add('even-book');
-      } else {
-        bookElement.classList.add('odd-book');
-      }
+      bookElement.classList.add(index % 2 === 0 ? 'even-book' : 'odd-book');
     });
 
     // Save the collection in localStorage
     localStorage.setItem('bookCollection', JSON.stringify(this.books));
 
     // Update bookList border based on collection length
-    if (this.books.length === 0) {
-      bookListElement.classList.remove('border');
-    } else {
-      bookListElement.classList.add('border');
-    }
+    bookListElement.classList.toggle('border', this.books.length > 0);
   }
 }
 
